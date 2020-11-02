@@ -1,9 +1,5 @@
-import { NativeModules } from 'react-native';
+import { requireNativeComponent } from 'react-native';
 
-type RnFluidicSliderType = {
-  multiply(a: number, b: number): Promise<number>;
-};
+const RnFluidicSlider = requireNativeComponent('RnFluidicSlider');
 
-const { RnFluidicSlider } = NativeModules;
-
-export default RnFluidicSlider as RnFluidicSliderType;
+export default RnFluidicSlider;
