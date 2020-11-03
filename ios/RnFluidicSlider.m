@@ -6,5 +6,7 @@
 
 RCT_EXPORT_VIEW_PROPERTY(onSlideStart, RCTDirectEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(onSlideEnd, RCTDirectEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(sliderBarColor, NSString)
+RCT_EXPORT_VIEW_PROPERTY(bubbleColor, NSString)
 
 @end

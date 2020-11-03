@@ -7,6 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <RnFluidicSlider
+        sliderBarColor="#10395e"
         style={{ width: 300, height: 100, backgroundColor: 'yellow' }}
         onSlideStart={(event) => {
           console.log(event.nativeEvent);
