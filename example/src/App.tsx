@@ -6,7 +6,15 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <RnFluidicSlider style={{ width: 300, height: 100, backgroundColor: 'yellow' }}  />
+      <RnFluidicSlider
+        style={{ width: 300, height: 100, backgroundColor: 'yellow' }}
+        onSlideStart={(event) => {
+          console.log(event.nativeEvent);
+        }}
+        onSlideEnd={(pos) => {
+          console.log(pos);
+        }}
+      />
     </View>
   );
 }
