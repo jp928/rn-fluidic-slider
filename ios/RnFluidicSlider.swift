@@ -20,7 +20,7 @@ class RnFluidicSlider: RCTViewManager {
         slider.shadowBlur = 5
         slider.shadowColor = UIColor(white: 0, alpha: 0.1)
         slider.contentViewColor = UIColor(red: 78/255.0, green: 77/255.0, blue: 224/255.0, alpha: 1)
-        slider.valueViewColor = .white
+        slider.valueViewColor = .red
 
         return slider
     }

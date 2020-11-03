@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <RnFluidicSlider />
+      <RnFluidicSlider style={{ width: 300, height: 100, backgroundColor: 'yellow' }}  />
     </View>
   );
 }
@@ -16,5 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    // backgroundColor: 'red'
   },
 });
