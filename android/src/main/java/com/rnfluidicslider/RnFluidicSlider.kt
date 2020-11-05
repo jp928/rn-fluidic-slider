@@ -17,6 +17,7 @@ class RnFluidicSlider : ViewGroupManager<ViewGroup>() {
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> {
     val builder = MapBuilder.builder<String, Any>()
     builder.put("onSlideStart", MapBuilder.of<String, String>("registrationName", "onSlideStart" ))
+    builder.put("onSlideEnd", MapBuilder.of<String, String>("registrationName", "onSlideEnd" ))
 
     return builder.build()
   }
@@ -35,6 +36,10 @@ class RnFluidicSlider : ViewGroupManager<ViewGroup>() {
     val total = max - min
     slider.beginTrackingListener = {
       reactContext.getNativeModule(UIManagerModule::class.java).eventDispatcher.dispatchEvent(RnFluidicEvent(constraintLayout.id, "onSlideStart", slider.position))
+    }
+
+    slider.endTrackingListener = {
+      reactContext.getNativeModule(UIManagerModule::class.java).eventDispatcher.dispatchEvent(RnFluidicEvent(constraintLayout.id, "onSlideEnd", slider.position))
     }
 
     slider.positionListener = { pos -> slider.bubbleText = "${min + (total  * pos).toInt()}" }

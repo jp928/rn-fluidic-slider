@@ -11,8 +11,8 @@ export default function App() {
         onSlideStart={(event) => {
           console.log(event.nativeEvent);
         }}
-        onSlideEnd={(pos) => {
-          console.log(pos);
+        onSlideEnd={(event) => {
+          console.log(event.nativeEvent);
         }}
       />
     </View>

@@ -15,7 +15,7 @@ class RnFluidicEvent : Event<RnFluidicEvent> {
   }
 
   override fun getEventName(): String {
-    return "onSlideStart"
+    return this.mEvent
   }
 
   override fun getCoalescingKey(): Short {
@@ -29,7 +29,7 @@ class RnFluidicEvent : Event<RnFluidicEvent> {
   private fun serializeEventData(): WritableMap {
     val eventData = Arguments.createMap()
     eventData.putInt("target", viewTag)
-    eventData.putDouble("value", this.mSelection.toDouble())
+    eventData.putDouble("position", this.mSelection.toDouble())
     eventData.putString("event", this.mEvent)
 
     return eventData
