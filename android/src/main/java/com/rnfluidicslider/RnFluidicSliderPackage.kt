@@ -11,10 +11,10 @@ import com.facebook.react.bridge.JavaScriptModule
 
 class RnFluidicSliderPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return Arrays.asList<NativeModule>(RnFluidicSliderModule(reactContext))
+        return listOf<NativeModule>(RnFluidicSliderModule(reactContext))
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return emptyList<ViewManager<*, *>>()
+        return listOf<ViewManager<*, *>>(RnFluidicSlider())
     }
 }
