@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import RnFluidicSlider from 'rn-fluidic-slider';
 
 export default function App() {
-
   return (
     <View style={styles.container}>
       <RnFluidicSlider

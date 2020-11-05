@@ -4,17 +4,22 @@ import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.UIManagerModule
 import com.ramotion.fluidslider.FluidSlider
 
-class RnFluidicSlider : ViewGroupManager<ViewGroup>() {
-    override fun getName(): String {
-      return "RnFluidicSlider"
-    }
 
-//    public override fun createViewInstance(context: ThemedReactContext): CoordinatorLayoutView {
-//      final layout = ConstraintLayout(context.getCurrentActivity())
-//    }
+class RnFluidicSlider : ViewGroupManager<ViewGroup>() {
+  override fun getName(): String {
+    return "RnFluidicSlider"
+  }
+
+  override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> {
+    val builder = MapBuilder.builder<String, Any>()
+    builder.put("onSlideStart", MapBuilder.of<String, String>("registrationName", "onSlideStart" ))
+
+    return builder.build()
+  }
 
   override fun createViewInstance(reactContext: ThemedReactContext): ViewGroup {
     val layout = ConstraintLayout(reactContext)

@@ -15,7 +15,11 @@ class RnFluidicEvent : Event<RnFluidicEvent> {
   }
 
   override fun getEventName(): String {
-    return "topChange"
+    return "onSlideStart"
+  }
+
+  override fun getCoalescingKey(): Short {
+    return 0
   }
 
   override fun dispatch(rctEventEmitter: RCTEventEmitter?) {
